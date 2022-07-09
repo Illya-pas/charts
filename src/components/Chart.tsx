@@ -34,12 +34,13 @@ export const ChartContainer = ({
   return (
     <>
       <div
-        className="col-6"
+        className="chart-item col-6"
         style={{
           width: 800,
           margin: 15,
           borderRadius: "15px",
           overflow: "hidden",
+          height: 400,
         }}
       >
         <Gradient />
@@ -48,7 +49,7 @@ export const ChartContainer = ({
           <Chart
             zoomable={true}
             style={{
-              height: 400,
+              top: "-18px",
             }}
           >
             <ChartAxisDefaults
