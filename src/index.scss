@@ -10,4 +10,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  font-family: 'Montserrat', sans-serif;
+}
+html{
+  background-color: #272445;
+}
+.charts-container{
+  display: flex;
+  @media (max-width: 1300px) {
+    display: block;
+  }
 }
