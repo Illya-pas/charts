@@ -13,15 +13,19 @@ function App(): JSX.Element {
     let responseData: ResponseAssetsType = await getAssets();
     const lastTvlTenData: Array<number> = [];
     const lastTenDATE: Array<string> = [];
-    const lastAprTenData: Array<number> = [16];
+    const lastAprTenData: Array<number> = [];
 
     for (let i = 0; i < 10; i++) {
       lastTvlTenData.push(responseData[i].value);
-      let lastAprItem = lastAprTenData[lastAprTenData.length - 1];
+      let lastAprItem = 16;
+      if (lastAprTenData.length) {
+        lastAprItem = lastAprTenData[lastAprTenData.length - 1];
+      }
+
       let lastAprPlusFivePercent = lastAprItem + (lastAprItem * 5) / 100;
       lastAprTenData.push(+lastAprPlusFivePercent.toFixed(2));
 
-      const itemDate: string[] = responseData[i].date.split(".");
+      const itemDate: string[] = responseData[i].date.split("-");
       const itemDateMonth: string = MONTH_NAMES[+itemDate[1] - 1];
       const itemViewDate = `${itemDateMonth} ${itemDate[2]}`;
       lastTenDATE.unshift(itemViewDate);
