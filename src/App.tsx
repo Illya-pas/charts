@@ -43,7 +43,8 @@ function App(): JSX.Element {
       const itemDate: string[] = staticDATE[i].split("-");
       const itemDateMonth: string = MONTH_NAMES[+itemDate[1] - 1];
       const itemViewDate = `${itemDateMonth} ${itemDate[2]}`;
-      lastTenDATE.unshift(itemViewDate);
+      // lastTenDATE.unshift(itemViewDate);
+      lastTenDATE.push(itemViewDate);
     }
     setAprData(lastAprTenData);
     setTvlData(lastTvlTenData);
